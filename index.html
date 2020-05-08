@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style-main.css">
+    <link rel="stylesheet" href="custom-bootstrap-margin-padding.css">
+    <title>Saylani Welfare Trust</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+    <style>
+        /*  SOCIAL ICONS*/
+        .social-icons {
+            background-color: #316DC3;
+        }
+        ul.si {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .fa {
+            padding: 10px;
+            font-size: 15px;
+            width: 10px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-facebook {
+            background: #316Dc3;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #316DC3;
+            color: white;
+        }   
+
+        .fa-youtube {
+            background: #316DC3;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #316DC3;
+            color: white;
+        }
+
+        /* navigation bar */
+
+        ul.navigation {
+            list-style: none;
+            float: right;
+        }
+        ul.navigation li {
+            display: inline;
+            margin: 0px;
+        }
+
+        .nav-bar {
+            overflow: hidden;
+            padding: 14px 0px;
+            font-size: 14px;
+        }
+        .nav-bar a {
+            color: black;
+            text-align: center;
+            padding: 11px 16px;
+            margin: 0px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .nav-bar a:hover, .dropbtn:hover {
+            background-color: rgb(49, 109, 195);
+            color:white;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+        .nav-bar a.active {
+            background-color: rgb(49, 109, 195);
+            color: white;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+        .dropbtn {
+            color: black;
+            background-color: white;
+            padding: 0px 12px;
+            border: none;
+            outline: none;
+        }
+
+        .btn-group button {
+            font-size: 10px;
+            font-family: merriweather ,serif;
+            background-color: #427900;
+            border: 1px solid green; /* Green border */
+            color: white; /* White text */
+            padding: 8px 7px; /* Some padding */
+            margin-top: 4px;
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .btn-group button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            background-color: #3e8e41;
+        }
+
+        /* new gallery */
+        body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  
+  margin-top: -50px; -webkit-user-select: none;
+  
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+    </style>
+</head>
+<body>
+    <div class="social-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="widget no-border m-0">
+                        <!-- Add font awesome icons -->
+                        <ul class="si">
+                            <li style="float: left;"><a href="#" class="fa fa-facebook" style="display: block; text-align: center; padding: 16px; text-decoration: none;"></a></li>
+                            <li style="float: left;"><a href="#" class="fa fa-twitter" style="display: block; text-align: center; padding: 16px; text-decoration: none;"></a></li>
+                            <li style="float: left;"><a href="#" class="fa fa-youtube" style="display: block; text-align: center; padding: 16px; text-decoration: none;"></a></li>
+                            <li style="float: left;"><a href="#" class="fa fa-instagram" style="display: block; text-align: center; padding: 16px; text-decoration: none;"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="widget no-border m-0" style="text-align: center;padding-top: 7px;">
+                        <span style="color: white;"> Millions of people's life has changed, millions more awaiting your donation</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget no-border m-0">
+                        <div class="btn-group">
+                            <button>UK Donor</button>
+                            <button>Donate Now</button>
+                            <button>SMIT Results</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container nav-bar">
+        <img src="https://dmhqppb4umb6.cloudfront.net/saylani-logo.png" alt="" height="5%" width="15%">
+        <ul class="navigation">
+            <li><a href="#" class="active"><b>Home</b></a></li>
+            <li><button class="dropbtn"><b>About</b><i class="fa fa-caret-down"></i></button></li>
+            <li><button class="dropbtn"><b>Saylani Services</b> <i class="fa fa-caret-down"></i></button></li>
+            <li><button class="dropbtn"><b>Future Projects</b><i class="fa fa-caret-down"></i></button></li>
+            <li><a href="#"><b>Media</b></a></li>
+            <li><a href="#"><b>News</b></a></li>
+            <li><button class="dropbtn"><b>Donation</b><i class="fa fa-caret-down"></i></button></li>
+        </ul>
+    </div>
+    <!-- slideshow -->
+
+    <div class="fluid">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="Banner.jpeg" alt="Los Angeles" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="slider1.png" alt="Chicago" style="width:100%;">
+            </div>
+          
+            <div class="item">
+              <img src="RotiBank_Slider.jpg" alt="New york" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="slider2.png" alt="New york" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="BloodBank_Slider.jpg" alt="New york" style="width:100%;">
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    <!-- slideshow end-->
+
+    <div class="container">
+        <div class="row">
+            <p style="margin-top: 12px; background-color: #316DC3; color: white; ">
+                <marquee direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
+                    <font color="#00FF00">(News-1 Dated:15-06-2019)<font color="#FFFFFF">&nbsp;&nbsp;PIAICNext Phase Admission in Islamabad And Faisalabad" . <a href="https://www.facebook.com/saylaniwelfare/photos/a.258515937507690/3441173892575196/?type=3&amp;theater" style="color: blue">More Details</a> &nbsp;&nbsp;
+                    <font color="#00FF00">(News-2 Dated:15-05-2019)<font color="#FFFFFF">&nbsp;&nbsp;Saylani Welfare Announced "Donation Application" . <a href="https://web.facebook.com/saylaniwelfare/photos/a.258515937507690/3332489120110341/?type=3&amp;theater" style="color: blue">More Details</a> &nbsp;&nbsp;
+                    <font color="#00FF00">(News-3 Dated:07-05-2019)<font color="#FFFFFF">&nbsp;&nbsp;Alhamdulillah Saylani Organized 200+ Locations For Iftar And Sehri In This Holy Month . <a href="https://www.facebook.com/saylaniwelfare/?type=3&amp;theater" style="color: blue">More Details</a> &nbsp;&nbsp;
+                    <font color="#00FF00">(News-4 Dated:08-03-2019)<font color="#FFFFFF">&nbsp;&nbsp;Saylani Welfare Distributing Ration &amp; Clothes to affected people of Balochistan. <a href="https://www.facebook.com/saylaniwelfare/posts/3164679946891260?__tn__=-R" style="color: blue">More Details</a> &nbsp;&nbsp;
+                    <font color="#00FF00">(News-5 Dated:25-02-2019)<font color="#FFFFFF">&nbsp;&nbsp;PIAIC Entrance Exam Merit Ranking List Announced. <a href="https://www.facebook.com/saylaniwelfare/photos/a.258515937507690/3135220066503915/?type=3&amp;theater%3E" style="color: blue">More Details</a>&nbsp;&nbsp;
+                    <font color="#00FF00">(News-6 Dated:23-02-2019)<font color="#FFFFFF">&nbsp;&nbsp;President of Pakistan (Dr. Arif Alvi) Visited Saylani Welfare International Trust HeadOffice Karachi. <a href="https://www.facebook.com/saylaniwelfare/posts/3135103563182232?__xts__[0]=68.ARD9PTgM3DL_2vvulRqQ-b25KUD2P8X7TSS9g6gbxDfRdIBqgjNGJffSbV0ZcFmUFF5Ocrn-wvtpvDbjWBQxq0UHTlRJR1vEkgUOfm8Vk0ltcQp9K5q268QBcUMjujlPyCnBIxXcbe_Qjqbw1DXfCLQ1fFwBdGk77ndYxRXPrUVHrYybrBb5jWxu8GJQ37RpI7LLayc6xkve6gO149Ud-NWv_eF72blzToVI2fZW2ZWJUlRFSgWFK5jgrDGcsP-I7NBis9UXNfBBb55nXahKzJHvloneJh93hN9Wc3bIyvpn7v1IJSixyqcGRr_KHC-mO46gL9JUYx_acVfGdQDLUCBORw&amp;__tn__=-R%3E" style="color: blue">More Details</a> &nbsp;&nbsp;                    
+                    <font color="#00FF00">(News-7 Dated:19-02-2019)<font color="#FFFFFF">&nbsp;&nbsp;Dr Jamil Ahmed (Additional Inspector General of Police) &amp; Atiqmir Visit Saylani Welfare International Trust, Saylani Mass I.T. Training. <a href="https://www.facebook.com/saylaniwelfare/posts/3124996217526300?__xts__[0]=68.ARCElwXqFXBXobZcA_UIl5WsTnqek6hA0692UZgzLiTQcX71VvEVoMgzqDV_LCU8l4vgjmKHex8j5abeGcQPzz-0Vo7g8gNqrP0CK04uhT29KI7ZBXw7L0UhSE9vpr7JOS4591gwSiYhmPbI_exl5O0PUbYyqzRyVjDhZf833fadxaHMxR3LURDcRfhfFRurM3x6cKNgZ7XwQi2vP6tA2-XS4HUzYNRUfZ5Yc4iUJAwXHOGi64EA62Drmy5c0mv0CZumqreWzE6JGBGOlQC5dMh7k07-qNBGwItqzarzu8CiNWC9kZMwzYyExhOY7JKF76U1ZzEbClh6A-yQYJ-qY1jbYQ&amp;__tn__=-R%3E" style="color: blue">More Details</a> &nbsp;&nbsp;     
+                </font></font></font></font></font></font></font></font></font></font></font></font></font></font></marquee>
+
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- Section: About  -->
+    <section style="background-color: #f7f7fa !important">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 style="color: rgb(30, 93, 228); font-family: serif; font-size: 28.8px; margin: 0px 0px 10px; font-weight: 600;">INTRO<span style="font-size:28.8px; font-family: serif; color: green; font-weight: 600;">DUCTION</span></h2>
+                        <div class="title-icon">
+                            <img src="https://www.saylaniwelfare.com/public_html/images/saylani/favicon.png" style="height: 40px;">
+                        </div>
+
+                        <div class="mt-15 show_more text-left" style="line-height: 1.9;">
+
+                            <p style="text-align: justify; animation-name: none;">
+                                Established in May 1999 by famous spiritual and religious scholar Maulana Bashir Ahmed Farooqui, Saylani
+                                Welfare International Trust was built on the fundamentals of breaking the cycle of poverty, alleviating the financial
+                                troubles of the poor, giving people a chance to live a dignified life and spreading happiness.
+                                <br>
+                                <br>
+                                We are an organization that believes in lighting up the lives of underprivileged people across the world. We
+                                endeavor to provide the best quality services in areas including food, education, medical and social welfare free
+                                of cost to people living in the dark. With over 60 different sectors, we feed thousands of hungry people each day,
+                                hundreds more are given the hope of life through medical health care, many are educated to become leaders of
+                                tomorrow and several are given the opportunity to stand on their feet financially.
+                                <br>
+                                <br>
+                                Today, we are proud to say that our physical presence extends throughout Pakistan with a vast network of 125
+                                branches operating in major cities including Karachi, Lahore, Islamabad, Rawalpindi, Hyderabad and
+                                Faisalabad. Apart from Pakistan, we have overseas offices in the UK, USA and UAE as well. Our worldwide
+                                branches are operating under the guidance of a team of over 2,000 working professionals who help almost
+                                125,000 people on a daily basis.
+                                <br>
+                                <br>
+                                We strongly believe that a little help goes a long way and our work would not be possible without the generous
+                                support of our valuable donors. Our local and international donors have graciously lent us a hand by supporting
+                                our causes and enabling us to serve the needs of people in need.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section style="background-color: rgba(36, 79, 242);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="padding: 30px 0px;">
+                    <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/icon_food_png.png" style="height: 40px; margin-top: 4%; display: block; margin-left: auto; margin-right: auto;">
+                    <h2 style="font-size:43px; font-family: serif; font-weight: 500; color: white; text-align: center;">125,000</h2>
+                    <h5 style="font-size:14px; text-transform: uppercase; font-family: serif; color: white; text-align: center;">Daily Dastrakhan<span><font style="font-size: 18px; color: #00FF00;">(Monthly)</font></span></h5>
+                </div>
+                <div class="col-md-3" style="padding: 30px 0px;">
+                    <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/icon_family_png.png" style="height: 40px; margin-top: 4%; display: block; margin-left: auto; margin-right: auto;">
+                    <h2 style="font-size:43px; font-family: serif; font-weight: 500; color: white; text-align: center;">7,500</h2>
+                    <h5 style="font-size:14px; text-transform: uppercase; font-family: serif; color: white; text-align: center;">Family Adoption<span><font style="font-size: 18px; color: #00FF00;">(Monthly)</font></span></h5>
+                </div>
+                <div class="col-md-3" style="padding: 30px 0px;">
+                    <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/icon_medical_png.png" style="height: 40px; margin-top: 4%; display: block; margin-left: auto; margin-right: auto;">
+                    <h2 style="font-size:43px; font-family: serif; font-weight: 500; color: white; text-align: center;">43,749</h2>
+                    <h5 style="font-size:14px; text-transform: uppercase; font-family: serif; color: white; text-align: center;">medical<span><font style="font-size: 18px; color: #00FF00;">(Monthly)</font></span></h5>
+                </div>
+                <div class="col-md-3" style="padding: 30px 0px;">
+                    <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/icon_education_png.png" style="height: 40px; display: block; margin-left: auto; margin-right: auto;">
+                    <h2 style="font-size:43px; font-family: serif; font-weight: 500; color: white; text-align: center;">180,000</h2>
+                    <h5 style="font-size:14px; text-transform: uppercase; font-family: serif; color: white; text-align: center;">education<span><font style="font-size: 18px; color: #00FF00;">(Monthly)</font></span></h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- services-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-1" style="text-align: center; padding: 30px 0px 30px 30px;">
+                    <h2 style="font-weight:600 ; font-size: 27.7px; text-transform: uppercase; font-family: serif; color:  rgba(36, 79, 242); text-align: center;">What We  <span style="font-size: 27.7px; color: #427900; text-align: center;">Are Doing?</span></h2>
+                        <div class="title-icon">
+                            <img src="https://www.saylaniwelfare.com/public_html/images/saylani/favicon.png" style="height: 40px;">
+                        </div>
+                </div>
+            </div>
+
+        
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div style="columns: #666666; font: 14px ,sans-serif; background-color: #ffffff; margin: 0px 0px 30px; padding: 30px; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.459);">
+                            <a href="#" class="wow fadeInRightBig" style=" animation-name: none;">
+                                <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/onlinesadqah.png" width="70" alt="" style="display: block; margin: auto;">
+                            </a>
+                            <h4 style="font-size: 18px; font-family: serif; margin: 20px 0px 10px; color: #316DC3; text-align: center; font-weight: 600;">ONLINE SADQAH</h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div style="columns: #666666; font: 14px ,sans-serif; background-color: #ffffff; margin: 0px 0px 30px; padding: 30px; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.459);">
+                            <a href="#" class="wow fadeInRightBig" style=" animation-name: none;">
+                                <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/welfare.png" width="70" alt="" style="display: block; margin: auto;">
+                            </a>
+                            <h4 style="font-size: 18px; font-family: serif; margin: 20px 0px 10px; color: #316DC3; text-align: center; font-weight: 600;">WELFARE</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div style="columns: #666666; font: 14px ,sans-serif; background-color: #ffffff; margin: 0px 0px 30px; padding: 30px; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.459);">
+                            <a href="#" class="wow fadeInRightBig" style=" animation-name: none;">
+                                <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/medical.png" width="70" alt="" style="display: block; margin: auto;">
+                            </a>
+                            <h4 style="font-size: 18px; font-family: serif; margin: 20px 0px 10px; color: #316DC3; text-align: center; font-weight: 600;">MEDICAL</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div style="columns: #666666; font: 14px ,sans-serif; background-color: #ffffff; margin: 0px 0px 30px; padding: 30px; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.459);">
+                            <a href="#" class="wow fadeInRightBig" style=" animation-name: none;">
+                                <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/Dastarkhwan.png" width="70" alt="" style="display: block; margin: auto;">
+                            </a>
+                            <h4 style="font-size: 18px; font-family: serif; margin: 20px 0px 10px; color: #316DC3; text-align: center; font-weight: 600;">DASTARKHAWAN</h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div style="columns: #666666; font: 14px ,sans-serif; background-color: #ffffff; margin: 0px 0px 30px; padding: 30px; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.459);">
+                            <a href="#" class="wow fadeInRightBig" style=" animation-name: none;">
+                                <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/ROPLANT.png" width="70" alt="" style="display: block; margin: auto;">
+                            </a>
+                            <h4 style="font-size: 18px; font-family: serif; margin: 20px 0px 10px; color: #316DC3; text-align: center; font-weight: 600;">RO PLANT</h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div style="columns: #666666; font: 14px ,sans-serif; background-color: #ffffff; margin: 0px 0px 30px; padding: 30px; box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.459);">
+                            <a href="#" class="wow fadeInRightBig" style=" animation-name: none;">
+                                <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/education.png" width="70" alt="" style="display: block; margin: auto;">
+                            </a>
+                            <h4 style="font-size: 18px; font-family: serif; margin: 20px 0px 10px; color: #316DC3; text-align: center; font-weight: 600;">EDUCATION</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UPCOMING MISSIONS-->
+    <section>
+        <div class="container" style="padding: 60px 15px 30px;">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-8" style="padding: 0px 15px 20px;">
+                        <h3 style="font-size: 24px; font-family: merriweather ,serif; color: #316DC3; margin: 0px 0px 30px; padding: 0px 0px 10px; font-weight: 600;">MISSION AND UPCOMING PROJECTS</h3>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div style="color: #666666; font-size: 14px; font-family: sans-serif; background-color: #F7F8FA; margin: 0px 0px 20px; padding: 15px;"> 
+                                    <a  href="#" style="display: block; float: left; line-height: 23.8px; margin-right: 30px; text-align: left;">
+                                        <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/Hepatitis.png">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 style="color: #316DC3; font-size: 15px; font-family: serif; margin: 10px 0px; font-weight: 600;">HEPATITIS</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div style="color: #666666; font-size: 14px; font-family: sans-serif; background-color: #F7F8FA; margin: 0px 0px 20px; padding: 15px;"> 
+                                    <a href="#" style="display: block; float: left; line-height: 23.8px; margin-right: 30px; text-align: left;">
+                                        <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/housing.png">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 style="color: #316DC3; font-size: 15px; font-family: serif; margin: 10px 0px; font-weight: 600;">HOUSING SOCIETY</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div style="color: #666666; font-size: 14px; font-family: sans-serif; background-color: #F7F8FA; margin: 0px 0px 20px; padding: 15px;"> 
+                                    <a href="#" style="display: block; float: left; line-height: 23.8px; margin-right: 30px; text-align: left;">
+                                        <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/IT.png">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 style="color: #316DC3; font-size: 15px; font-family: serif; margin: 10px 0px; font-weight: 600;">IT LITERACY</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div style="color: #666666; font-size: 14px; font-family: sans-serif; background-color: #F7F8FA; margin: 0px 0px 20px; padding: 15px;"> 
+                                    <a href="#"  style="display: block; float: left; line-height: 23.8px; margin-right: 30px; text-align: left;">
+                                        <img src="https://www.saylaniwelfare.com/public_html/images/saylani/icons/tharparkar.png">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 style="color: #316DC3; font-size: 15px; font-family: serif; margin: 10px 0px; font-weight: 600;">THARPARKAR</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="color: #666666; font-size: 14px; font-family: sans-serif; padding: 0px 15px;">
+                        <h3 style="color: #316DC3; font-size: 24px; font-family: serif; margin: 0px 0px 30px; padding: 0px 0px 10px; font-weight: 600;">Upcoming Events</h3>
+                        
+                         <p>
+
+                                <marquee direction="up" width="250" height="200" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                                    Saylani Welfare Distributing Ration &amp; Clothes to affected people of Balochistan .<a href="https://www.facebook.com/saylaniwelfare/posts/3164679946891260?__tn__=-R" style="color: blue">More Details</a> <br><br>
+                                    Entry Test Accouncement (Graphic Designing &amp; Video Editing/Animation Course) On Sunday 3rd March 2019 @ 11:00Am Vanue: 4rh Floor, Saylani Welfare International Trust HeadOffice Bahadurabad .<a href="https://www.facebook.com/saylaniwelfare/photos/a.258515937507690/3152781434747778/?type=3&amp;theater%3E" style="color: blue">More Details</a> <br><br>
+                                    Dr Jamil Ahmed (Additional Inspector General of Police) &amp; Atiqmir Visit Saylani Welfare International Trust, Saylani Mass I.T. Training .<a href="https://www.facebook.com/saylaniwelfare/posts/3124996217526300?__xts__[0]=68.ARCElwXqFXBXobZcA_UIl5WsTnqek6hA0692UZgzLiTQcX71VvEVoMgzqDV_LCU8l4vgjmKHex8j5abeGcQPzz-0Vo7g8gNqrP0CK04uhT29KI7ZBXw7L0UhSE9vpr7JOS4591gwSiYhmPbI_exl5O0PUbYyqzRyVjDhZf833fadxaHMxR3LURDcRfhfFRurM3x6cKNgZ7XwQi2vP6tA2-XS4HUzYNRUfZ5Yc4iUJAwXHOGi64EA62Drmy5c0mv0CZumqreWzE6JGBGOlQC5dMh7k07-qNBGwItqzarzu8CiNWC9kZMwzYyExhOY7JKF76U1ZzEbClh6A-yQYJ-qY1jbYQ&amp;__tn__=-R%3E" style="color: blue">More Details</a>   <br><br> 
+                                    PIAIC Entrance Exam Merit Ranking List Announced.<a href="https://www.saylaniwelfare.com/result" style="color: blue">More Details</a>  <br><br> President of Pakistan (Dr. Arif Alvi) Visited Saylani Welfare International Trust HeadOffice Karachi. <a href="https://www.facebook.com/saylaniwelfare/posts/3135103563182232?__xts__[0]=68.ARD9PTgM3DL_2vvulRqQ-b25KUD2P8X7TSS9g6gbxDfRdIBqgjNGJffSbV0ZcFmUFF5Ocrn-wvtpvDbjWBQxq0UHTlRJR1vEkgUOfm8Vk0ltcQp9K5q268QBcUMjujlPyCnBIxXcbe_Qjqbw1DXfCLQ1fFwBdGk77ndYxRXPrUVHrYybrBb5jWxu8GJQ37RpI7LLayc6xkve6gO149Ud-NWv_eF72blzToVI2fZW2ZWJUlRFSgWFK5jgrDGcsP-I7NBis9UXNfBBb55nXahKzJHvloneJh93hN9Wc3bIyvpn7v1IJSixyqcGRr_KHC-mO46gL9JUYx_acVfGdQDLUCBORw&amp;__tn__=-R%3E" style="color: blue">More Details</a>                    
+                                </marquee>
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- IMAGE GALLERY-->
+
+    <div id="gallery" style="padding-top: 60px; padding-bottom: 40px;">
+        <div class="display-table">
+            <div class="display-table-cell">
+                <div class="container pt-0 pb-0">
+                    <div class="section-title text-center">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <h2 style="font-weight:600 ; font-size: 27.7px; font-family: serif; text-transform: uppercase; font-family: serif; color:  rgba(36, 79, 242); text-align: center;">IMAGE <span style="font-family:serif; font-size: 27.7px; color: #427900; text-align: center;">GALLERY</span></h2>
+                                <div class="title-icon ">
+                                    <img src="https://www.saylaniwelfare.com/public_html/images/saylani/favicon.png" style="height: 40px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Portfolio Gallery Grid -->
+
+                                <div class="gallery-isotope grid-5 gutter-small clearfix" data-lightbox="gallery" style="position: relative; height: 300px;">
+                                    <!-- Portfolio Item Start -->
+                                    <div class="gallery-item" style="height: 300px; position: absolute; left: 0px; top: 0px;">
+                                        <div class="thumb">
+                                            <img alt="project" src="rashan2.jpg" class="img-fullwidth">
+                                            <div class="overlay-shade"></div>
+                                            <div class="icons-holder">
+                                                <div class="icons-holder-inner">
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="rashan2.jpg" data-lightbox-gallery="gallery"><i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="rashan2.jpg" download=""><i class="fa fa-download"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Portfolio Item End -->
+
+                                    <!-- Portfolio Item Start -->
+                                    <div class="gallery-item" style="height: 300px; position: absolute; left: 228px; top: 0px;">
+                                        <div class="thumb">
+                                            <img alt="project" src="food.jpg" class="img-fullwidth">
+                                            <div class="overlay-shade"></div>
+                                            <div class="icons-holder">
+                                                <div class="icons-holder-inner">
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="food.jpg" data-lightbox-gallery="gallery"><i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="food.jpg" download=""><i class="fa fa-download"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Portfolio Item End -->
+
+                                    <!-- Portfolio Item Start -->
+                                    <div class="gallery-item" style="height: 300px; position: absolute; left: 456px; top: 0px;">
+                                        <div class="thumb">
+                                            <img alt="project" src="hazrat.jpg" class="img-fullwidth">
+                                            <div class="overlay-shade"></div>
+                                            <div class="icons-holder">
+                                                <div class="icons-holder-inner">
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="hazrat.jpg" data-lightbox-gallery="gallery"><i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="hazrat.jpg" download=""><i class="fa fa-download"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Portfolio Item End -->
+
+
+
+                                    <!-- Portfolio Item Start -->
+                                    <div class="gallery-item" style="height: 300px; position: absolute; left: 684px; top: 0px;">
+                                        <div class="thumb">
+                                            <img alt="project" src="rashan2.jpg" class="img-fullwidth">
+                                            <div class="overlay-shade"></div>
+                                            <div class="icons-holder">
+                                                <div class="icons-holder-inner">
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="rashan2.jpg" data-lightbox-gallery="gallery"><i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="rashan2.jpg" download=""><i class="fa fa-download"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Portfolio Item End -->
+
+
+
+                                    <!-- Portfolio Item Start -->
+                                    <div class="gallery-item" style="height: 300px; position: absolute; left: 912px; top: 0px;">
+                                        <div class="thumb">
+                                            <img alt="project" src="hazrat2.jpg" class="img-fullwidth">
+                                            <div class="overlay-shade"></div>
+                                            <div class="icons-holder">
+                                                <div class="icons-holder-inner">
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="hazrat2.jpg" data-lightbox-gallery="gallery"><i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                    <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored" style="display:inline-block;">
+                                                        <a href="hazrat2.jpg" download=""><i class="fa fa-download"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Portfolio Item End -->
+                                </div>
+                                <!-- End Portfolio Gallery Grid -->
+                            </div>
+                        </div>
+                    </div>       
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  FOOTER  -->
+
+    <footer style="background-color: rgb(36, 39, 43); width: 100%;">
+        <div class="container" style="padding: 70px 15px 40px;">
+            <div class="row">
+                <div class="col-sm-6 col-md-4" >
+                    <div style="color: #bbb; font-family: sans-serif;">
+                        <p style="font-family: sans-serif;">Head Office,
+                            <br> A-25, Bahadurabad Chowrangi
+                            Karachi, Pakistan </p>
+                        <ul  style="padding-left: 0; margin-left: -5px; list-style: none; margin-top: 0px;">
+                            <li><i class="fa fa-phone" style="color: #427900; margin-right: 5px;"></i>UAN: 111-729-526  </li>
+                            <li><i class="fa fa-globe" style="color: #427900; margin-right: 5px;"></i>(+0092-213) 4130786-90</li>
+                            <li><i class="fa fa-phone" style="color: #427900; margin-right: 5px;"></i>CELL: 92-311-1729526</li>
+                            <li><i class="fa fa-phone" style="color: #427900; margin-right: 5px;"></i>USA NO +1(716)941 7792 </li>
+                            <li><i class="fa fa-phone" style="color: #427900; margin-right: 5px;"></i>UK NO (+44)115 970 6256 </li>
+                            <li><i class="fa fa-envelope-o" style="color: #427900; margin-right: 5px;"></i>  info@saylaniwelfare.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="widget dark" style="color: #bbb;">
+                        <h5 class="widget-title line-bottom">Useful Links</h5>
+                    </div>
+                </div>
+    
+                <div class="col-sm-6 col-md-4">
+                    <div class="widget dark">
+                        <h5 class="widget-title mb-10">Connect With Us</h5>
+                        <ul class="styled-icons icon-theme-colored icon-circled icon-sm">
+                            <li><a href=""><i class="fa fa-facebook" style="text-align: center; background-color: #316dc3; color: white; padding: 10px 16px;"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter" style="text-align: center; background-color: #316dc3; color: white; padding: 10px 16px;"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagram" style="text-align: center; background-color: #316dc3; color: white; padding: 10px 16px;"></i></a></li>
+                            <li><a href=""><i class="fa fa-youtube" style="text-align: center; background-color: #316dc3; color: white; padding: 10px 16px;"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <div style="background-color: #316DC3;">
+            <div class="container" style="padding-top: 10px; padding-bottom: 5px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="color:white; font-size: 11px; ">Copyright © 2020 Saylani Welfare </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html> 
